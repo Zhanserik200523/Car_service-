@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница - Car Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        html, body { height: 100%; }
+        body { display: flex; flex-direction: column; background-color: #f8f9fa; }
+        .container { flex: 1; }
+        .feature-icon {
+            font-size: 3rem;
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+        .card-img-top {
+            height: 160px;
+            object-fit: cover;
+        }
+        .carousel-item {
+            transition: transform 0.6s ease;
+        }
+
+        .card p {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        .hover-effect:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+
+    </style>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</head>
+<body class="bg-light">
+
+<!-- 🔧 Навигация -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Zhans Service</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="/profile">Профиль</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cars">Машины</a></li>
+                <li class="nav-item"><a class="nav-link" href="/catalog_products">Продукция</a></li>
+                <li class="nav-item d-none" id="catalogLink"><a class="nav-link" href="/catalog_services">Каталог услуг</a></li>
+                <li class="nav-item d-none" id="adminServicesLink"><a class="nav-link" href="/services">Услуги</a></li>
+                <li class="nav-item d-none" id="adminPanelLink"><a class="nav-link" href="/admin_panel">Админка</a></li>
+                <li class="nav-item d-none" id="adminProductsLink"><a class="nav-link" href="/products">Товары</a></li>
+            </ul>
+            <button class="btn btn-outline-light" id="logoutBtn">Выйти</button>
+        </div>
+    </div>
+</nav>
+
+<!-- 🚘 Контент -->
+<div class="container py-5">
+    <div style="background: url('https://s0.rbk.ru/v6_top_pics/media/img/2/70/347181220238702.jpeg') center/cover no-repeat; color: white; padding: 100px 20px;">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Car Service — надёжное СТО в вашем городе</h1>
+            <p class="lead">Обслуживаем авто, как своё. Онлайн запись за 1 минуту.</p>
+            <a href="/catalog_services" class="btn btn-primary btn-lg mt-3">Записаться на услугу</a>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <!-- Преимущества -->
+    <div class="row text-center mb-5">
+        <div class="col-md-4">
+            <div class="feature-icon"><i class="bi bi-tools"></i></div>
+            <h5>Профессиональные услуги</h5>
+            <p>Опытные мастера и сертифицированное оборудование.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-icon"><i class="bi bi-calendar-check"></i></div>
+            <h5>Онлайн запись</h5>
+            <p>Выберите дату и услугу — всё просто и быстро.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-icon"><i class="bi bi-cart"></i></div>
+            <h5>Качественные товары</h5>
+            <p>Масла, фильтры, антифриз и многое другое.</p>
+        </div>
+    </div>
+
+
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h3 class="mb-3">Почему выбирают нас?</h3>
+                <p>Car Service — это надёжное СТО, где работают только профессионалы. Мы используем качественные материалы, современное оборудование и гарантируем честный подход к каждому клиенту.</p>
+                <ul class="list-unstyled">
+                    <li>✅ 8 лет опыта в обслуживании авто</li>
+                    <li>✅ Онлайн запись и прозрачные цены</li>
+                    <li>✅ Более 5000 довольных клиентов</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="https://liter.kz/cache/imagine/1200/uploads/news/2021/08/20/xxl.jpg" class="img-fluid rounded shadow" alt="СТО">
+            </div>
+        </div>
+    </div>
+
+    <!-- Популярные действия -->
+    <div class="row g-4">
+        <!-- Карточка 1 -->
+        <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-lg rounded-4 hover-effect bg-white" style="transition: 0.3s ease;">
+                <img src="https://www.brd24.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2018/02/a4237d69b553298db50c3ec9dc464d58.jpg.webp"
+                     class="card-img-top rounded-top-4" alt="Услуги"
+                     style="height: 240px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Записаться на услугу</h5>
+                    <p class="card-text text-muted">Выберите нужную услугу и удобную дату прямо сейчас.</p>
+                    <a href="/catalog_services" class="btn btn-primary px-4">Каталог услуг</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-lg rounded-4 hover-effect bg-white" style="transition: 0.3s ease;">
+                <img src="https://www.avtoradosti.com.ua/files/2021/blog/raskhodniki/1.jpg"
+                     class="card-img-top rounded-top-4" alt="Продукция"
+                     style="height: 240px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Посмотреть товары</h5>
+                    <p class="card-text text-muted">Широкий выбор автотоваров по отличным ценам.</p>
+                    <a href="/catalog_products" class="btn btn-primary px-4">Перейти к продукции</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="container-fluid py-5" style="background-color: #f1f3f5;">
+    <h3 class="text-center mb-2">Что говорят о нас</h3>
+    <p class="text-center text-muted mb-4">Реальные отзывы наших довольных клиентов</p>
+
+    <div id="testimonialCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner text-center">
+
+            <!-- Отзыв 1 -->
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                    <div class="card p-4 shadow" style="max-width: 500px; border: none; border-radius: 15px;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR39iGG5an70vyRJijnMXRHtohS_9foYxrOAg&s" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Клиент 1">
+                        <div>
+                            <h5 class="mb-1">Айдана А.</h5>
+                            <p class="text-muted small">Пользовалась полным обслуживанием — всё понравилось!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Отзыв 2 -->
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="card p-4 shadow" style="max-width: 500px; border: none; border-radius: 15px;">
+                        <img src="https://img.freepik.com/free-photo/close-up-portrait-curly-handsome-european-male_176532-8133.jpg?semt=ais_hybrid&w=740" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Клиент 2">
+                        <div>
+                            <h5 class="mb-1">Руслан М.</h5>
+                            <p class="text-muted small">Записался через сайт. Удобно и быстро — рекомендую!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Отзыв 3 -->
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="card p-4 shadow" style="max-width: 500px; border: none; border-radius: 15px;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYiJpnGmnV6n9pHAg3yRpVZJgiZJuZhF16EA&s" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Клиент 3">
+                        <div>
+                            <h5 class="mb-1">Жанна К.</h5>
+                            <p class="text-muted small">Очень уютное СТО! Всё сделали на высшем уровне.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Кнопки навигации -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+<div class="container my-5">
+    <h3 class="text-center mb-4">Где мы находимся</h3>
+    <div class="rounded-4 shadow overflow-hidden" style="height: 450px;">
+        <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6146.968118669851!2d76.87154169052374!3d43.215926622396395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388368581d609ad9%3A0xe1f0af0b0d83729e!2z0YPQuy4g0JbQsNC90LTQvtGB0L7QstCwIDU1LCDQkNC70LzQsNGC0YsgMDUwMDM1!5e0!3m2!1sru!2skz!4v1747740842844!5m2!1sru!2skz"
+                width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+<div class="container my-5">
+    <h3 class="text-center mb-4">Часто задаваемые вопросы</h3>
+    <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="q1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true">
+                    Как записаться на услугу?
+                </button>
+            </h2>
+            <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Перейдите в <strong>Каталог услуг</strong>, выберите услугу и свободную дату. Подтвердите запись.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="q2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">
+                    Нужно ли регистрироваться?
+                </button>
+            </h2>
+            <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Да, чтобы мы могли сохранить ваши данные и показать все записи в личном кабинете.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="q3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">
+                    Какие бренды масел вы используете?
+                </button>
+            </h2>
+            <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Мы используем оригинальные масла: Shell, Liqui Moly, Castrol, Total, Motul.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a href="https://wa.me/77085133003" target="_blank"
+   style="position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; border-radius: 50%; width: 55px; height: 55px; text-align: center; font-size: 26px; line-height: 55px; z-index: 999;">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+
+
+<!-- Футер -->
+<footer class="bg-dark text-white pt-5 pb-3 mt-auto">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <!-- Блок: О нас -->
+            <div class="col-md-4 mb-4">
+                <h5 class="text-uppercase">Zhans Service</h5>
+                <p class="small text-muted">Надёжное СТО в Алматы. Запишитесь онлайн и получайте качественное обслуживание уже сегодня.</p>
+            </div>
+
+            <!-- Блок: Контакты -->
+            <div class="col-md-4 mb-4">
+                <h6 class="text-uppercase">Контакты</h6>
+                <ul class="list-unstyled small">
+                    <li>📍 ул. Жандосова 55, Алматы</li>
+                    <li>📞 <a href="tel:+77001234567" class="text-white text-decoration-none">+7 (700) 123-45-67</a></li>
+                    <li>✉️ <a href="mailto:info@carservice.kz" class="text-white text-decoration-none">info@carservice.kz</a></li>
+                </ul>
+            </div>
+
+            <!-- Блок: Ссылки -->
+            <div class="col-md-4 mb-4">
+                <h6 class="text-uppercase">Навигация</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="/profile" class="text-white text-decoration-none">Профиль</a></li>
+                    <li><a href="/catalog_services" class="text-white text-decoration-none">Услуги</a></li>
+                    <li><a href="/catalog_products" class="text-white text-decoration-none">Продукция</a></li>
+                    <li><a href="/login" class="text-white text-decoration-none">Вход</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="bg-secondary">
+
+        <!-- Нижняя строка -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start px-2">
+            <p class="mb-0 small">© <span id="currentYear"></span> Car Service. Все права защищены.</p>
+            <div class="mt-2 mt-md-0">
+                <a href="https://wa.me/77001234567" target="_blank" class="text-white me-3 fs-5"><i class="bi bi-whatsapp"></i></a>
+                <a href="https://t.me/username" target="_blank" class="text-white me-3 fs-5"><i class="bi bi-telegram"></i></a>
+                <a href="https://instagram.com/yourpage" target="_blank" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Скрипты -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/static/guard.js"></script>
+<script>
+    protectPage();
+
+    document.getElementById("logoutBtn").onclick = function () {
+        localStorage.removeItem("token");
+        window.location.href = "/login";
+    }
+
+    async function setupNavigation() {
+        const token = localStorage.getItem("token");
+        const res = await fetch("/api/profile", {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+
+        if (res.ok) {
+            const user = await res.json();
+            if (user.role === "admin") {
+                document.getElementById("adminServicesLink").classList.remove("d-none");
+                document.getElementById("adminPanelLink").classList.remove("d-none");
+                document.getElementById("adminProductsLink").classList.remove("d-none");
+            } else {
+                document.getElementById("catalogLink").classList.remove("d-none");
+            }
+        }
+    }
+
+    setupNavigation();
+</script>
+
+    <script>
+        const carousel = document.querySelector('#testimonialCarousel');
+        const bsCarousel = new bootstrap.Carousel(carousel, {
+        interval: 5000,  // каждые 5 секунд
+        ride: 'carousel',
+        pause: 'hover'
+    });
+</script>
+
+
+</body>
+</html>

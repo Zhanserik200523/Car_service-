@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>appointment</title>
+</head>
+<body>
+<h1>Запись на ремонт</h1>
+
+<form id="appointmentForm">
+    <select id="carSelect"></select><br>
+    <input type="datetime-local" id="date"><br>
+    <textarea id="comment" placeholder="Комментарий..."></textarea><br>
+    <button type="submit">Записаться</button>
+</form>
+
+<p id="message"></p>
+
+<script src="/static/appointment.js"></script>
+<script src="/static/guard.js"></script>
+<script>
+    protectPage(); // без параметров → просто login check
+</script>
+
+</body>
+</html>
